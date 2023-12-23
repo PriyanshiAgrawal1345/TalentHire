@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>TalentHire</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div>
+            <h1 class="text-white">TalentHire</h1>
+        </div>
+        <div class="container">
+            <form class="form" method="POST" action="{{ url_for('result') }}" onsubmit="displayWaitMessage()">
+                <input type="text" name="recruiter" style="text-align: center;" placeholder=" Enter your profile link ">
+                <button class="btn btn-lg text-center text-white mb-4" style="background-color: rgb(5, 109, 83);" type="submit" id="submitbtn">Submit</button>
+                <br>
+                <h3 class="text-white" style="font-size: 20px; font-weight: bold;">Please wait after providing the link to your profile</span>
+            </form>
+            {% with messages = get_flashed_messages() %} {% if messages %}
+            <ul class="flashes text-center" style="list-style: none;">
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %} {% endwith %}
+        </div>
+    </div>
+
+    <script>
+        function displayWaitMessage() {
+            var submit_btn = document.getElementById("submitbtn");
+            submit_btn.innerHTML = "Please wait .. ";
+
+        }
+    </script>
+</body>
+
+</html>

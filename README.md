@@ -1,5 +1,5 @@
 ## TalentHire
-$ A web scraping tool for precise hiring, leveraging HackerEarth data to match organizations' requirements efficiently.
+A web scraping project for precise hiring, leveraging HackerEarth data to match organizations' requirements efficiently.
 
 ### Prerequisites
 Please ensure that you run the application in firefox browser. Ensure that geckodriver is added to the local path.
